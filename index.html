@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>для Беатрисы ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="loader">
+  <div class="loader-content">
+    <div class="loader-orbit">
+      <div class="loader-planet"></div>
+    </div>
+    <p class="loader-text">маленькая вселенная для Беатрисы</p>
+    <button id="startBtn">Войти</button>
+    <p class="loader-sub">надень наушники, пожалуйста</p>
+  </div>
+</div>
+
+<canvas id="scene"></canvas>
+
+<div class="vignette"></div>
+<div class="grain"></div>
+<div class="glow-layer"></div>
+<div class="speed-lines"></div>
+
+<header id="topbar">
+  <div class="logo">для Беатрисы ♡</div>
+
+  <button id="musicBtn" class="music-btn playing" aria-label="музыка">
+    <span class="music-ring"></span>
+    <span class="music-ring music-ring-2"></span>
+    <span class="eq">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </span>
+    <svg class="mute-slash" viewBox="0 0 40 40" aria-hidden="true">
+      <line x1="6" y1="6" x2="34" y2="34"/>
+    </svg>
+  </button>
+</header>
+
+<nav id="dotNav">
+  <a class="dot active" data-scene="0" data-label="Начало"></a>
+  <a class="dot"        data-scene="1" data-label="Для тебя"></a>
+  <a class="dot"        data-scene="2" data-label="Беатриса"></a>
+  <a class="dot"        data-scene="3" data-label="Ириска"></a>
+  <a class="dot"        data-scene="4" data-label="Послание"></a>
+  <a class="dot"        data-scene="5" data-label="Навсегда"></a>
+</nav>
+
+<main id="scene-root">
+
+  <section class="scene active" data-scene="0">
+    <div class="scene-inner hero-inner">
+      <h1 class="big-title">С днём рождения</h1>
+      <h2 class="name-title">Беатриса</h2>
+      <p class="subtitle">я сшил тебе небо из каждой звезды, до которой смог дотянуться</p>
+    </div>
+  </section>
+
+  <section class="scene" data-scene="1">
+    <div class="scene-inner">
+      <h2 class="scene-title">Это для тебя</h2>
+      <p class="poem">
+        Я собрал небольшую планету из шёпота и света,<br>
+        место, где твой смех останется до рассвета.<br>
+        Листай сквозь звёзды, пусть молчание ведёт —<br>
+        каждый стих это сердцебиение, каждый пиксель это лёд.
+      </p>
+    </div>
+  </section>
+
+  <section class="scene" data-scene="2">
+    <div class="scene-header">
+      <h2 class="scene-title">Девушка, которой принадлежит моё небо</h2>
+      <p class="scene-sub">несколько кадров тебя — мой любимый вид</p>
+    </div>
+    <div class="poem-short">
+      Красная, как дикое пламя, мягкая, как рассвет,<br>
+      голос, что звучит во мне ещё долго после тебя, и нет<br>
+      ни одной галактики, ни одной звезды —<br>
+      что я не отдал бы, чтоб услышать твой смех вновь, и ты.
+    </div>
+    <div class="gallery" id="herGallery"></div>
+  </section>
+
+  <section class="scene" data-scene="3">
+    <div class="scene-header">
+      <h2 class="scene-title">
+        А ещё Ириска
+        <span class="paw-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="20" cy="22" rx="6" ry="8" fill="currentColor"/>
+            <ellipse cx="32" cy="16" rx="6" ry="9" fill="currentColor"/>
+            <ellipse cx="44" cy="22" rx="6" ry="8" fill="currentColor"/>
+            <ellipse cx="52" cy="34" rx="5" ry="7" fill="currentColor"/>
+            <path d="M14 40 Q20 58 32 58 Q44 58 50 40 Q44 44 32 44 Q20 44 14 40 Z" fill="currentColor"/>
+          </svg>
+        </span>
+      </h2>
+      <p class="scene-sub">самое мягкое существо на твоей орбите</p>
+    </div>
+    <div class="poem-short">
+      Ириска ступает тихо, как луна по коридору,<br>
+      сворачивается в солнце и правит всем домом.<br>
+      Между мурлыканьем и сном она знает всю правду —<br>
+      что её человек это магия, и она тому доказательство.
+    </div>
+    <div class="gallery cat-gallery" id="catGallery"></div>
+  </section>
+
+  <section class="scene" data-scene="4">
+    <div class="scene-inner center message-inner">
+      <h2 class="scene-title">Послание</h2>
+      <p id="typing" class="typing-text"></p>
+    </div>
+  </section>
+
+  <section class="scene" data-scene="5">
+    <div class="scene-inner center">
+      <div class="big-heart">♡</div>
+      <h2 class="scene-title forever-title">Навсегда</h2>
+      <p class="poem-final">
+        Вот моё обещание, в фиолетовом и в огне,<br>
+        в любом сезоне, в любой игре:<br>
+        сквозь поражения и победы, сквозь тишину и песню,<br>
+        моя Беатриса — рядом с тобой моё место.
+      </p>
+      <p class="end-sign">с любовью, навсегда — <span class="signature">loonklvge</span></p>
+    </div>
+    <div class="hearts-rain" id="heartsRain"></div>
+  </section>
+
+</main>
+
+<audio id="bgMusic" loop>
+  <source src="assets/song.mp3" type="audio/mpeg" />
+</audio>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="shaders.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
